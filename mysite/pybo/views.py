@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 
-from .models import Question
 from .forms import QuestionForm, AnswerForm
+from .models import Question
+
 
 def index(request):
     """
@@ -40,9 +41,10 @@ def answer_create(request, question_id):
     context = {'question': question, 'form': form}
     return render(request, 'pybo/question_detail.html', context)
 
+
 def question_create(request):
     """
-    pybo 질문 등록
+    pybo 질문등록
     """
     if request.method == 'POST':
         form = QuestionForm(request.POST)
