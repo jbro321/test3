@@ -5,7 +5,7 @@ from common.forms import UserForm
 
 def signup(request):
     """
-    계정생성
+    회원가입
     """
     if request.method == "POST":
         form = UserForm(request.POST)
